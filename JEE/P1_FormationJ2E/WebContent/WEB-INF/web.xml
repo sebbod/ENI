@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>PremiereServletConfigarationWebXML</servlet-name>
+  	<servlet-class>fr.eni.javaee.module2.PremiereServletConfigarationWebXML</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>PremiereServletConfigarationWebXML</servlet-name>
+  	<url-pattern>/modules/module2/PremiereServletConfigarationWebXML</url-pattern>
+  </servlet-mapping>
 </web-app>
