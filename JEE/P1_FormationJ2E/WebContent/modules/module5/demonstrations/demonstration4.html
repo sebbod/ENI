@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 
   <head>
@@ -22,9 +22,9 @@
   
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
-<mso:_dlc_DocId msdt:dt="string">Z5HNVW24N33T-678105430-3795</mso:_dlc_DocId>
-<mso:_dlc_DocIdItemGuid msdt:dt="string">f19198f0-342b-4ad7-adca-ddd4450c1c16</mso:_dlc_DocIdItemGuid>
-<mso:_dlc_DocIdUrl msdt:dt="string">http://inet/eni-transverse/ecole-num�rique/_layouts/15/DocIdRedir.aspx?ID=Z5HNVW24N33T-678105430-3795, Z5HNVW24N33T-678105430-3795</mso:_dlc_DocIdUrl>
+<mso:_dlc_DocId msdt:dt="string">Z5HNVW24N33T-678105430-3812</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">b635646e-cbd3-4717-8668-f35009c7fd2f</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">http://inet/eni-transverse/ecole-numérique/_layouts/15/DocIdRedir.aspx?ID=Z5HNVW24N33T-678105430-3812, Z5HNVW24N33T-678105430-3812</mso:_dlc_DocIdUrl>
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
 </head>
@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="../module.html">Application de démonstration - Module 2</a>
+        <a class="navbar-brand" href="../module.html">Application de démonstration - Module 5</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,27 +60,28 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Démonstration 5
-        <small>L'écriture de la réponse</small>
+      <h1 class="my-4">Démonstration 4
+        <small>Le contexte d'application</small>
       </h1>
 	
 	
-      <h2>L'écriture des en-têtes de la réponse</h2>
-		
+	 
+    <h2>Les attributs d'application</h2>
+    
 		<p>
-		  	Le lien suivant pointe vers une servlet écrivant des en-têtes (faites un F12 avant pour contrôler le résultat) :
-		  	<a href="../ServletEcrivantDesEntetes">/modules/module2/ServletEcrivantDesEntetes</a>
+		  	Le lien suivant pointe vers une servlet manipulant un attribut d'application :
+		  	<a href="../ServletManipulantUnAttributDApplication">/modules/module5/ServletManipulantUnAttributDApplication</a>.
 		</p>
 		
 		<p>Voici le code de la servlet :</p>
-		
-	 <pre class="prettyprint">
-	 	<code class="language-java">
-package fr.eni.javaee.module2;
+
+		<pre class="prettyprint">
+		 	<code class="language-java">
+package fr.eni.javaee.module5;
 
 import java.io.IOException;
-import java.util.Locale;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -88,16 +89,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletEcrivantDesEnTetes
+ * Servlet implementation class ServletManipulantUnAttributDApplication
  */
-@WebServlet("/modules/module2/ServletEcrivantDesEnTetes")
-public class ServletEcrivantDesEnTetes extends HttpServlet {
+@WebServlet("/modules/module5/ServletManipulantUnAttributDApplication")
+public class ServletManipulantUnAttributDApplication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletEcrivantDesEnTetes() {
+    public ServletManipulantUnAttributDApplication() {
         super();
     }
 
@@ -105,12 +106,10 @@ public class ServletEcrivantDesEnTetes extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setStatus(HttpServletResponse.SC_OK);
-		response.setLocale(Locale.FRENCH);
-		response.setContentType("text/plain");
-		response.setCharacterEncoding("UTF-8");
+		this.getServletContext().setAttribute("attributDApplication", "Bonjour tout le monde");
 		
-		response.setHeader("MON_ENTETE", "MA VALEUR");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/modules/module5/afficherAttributApplication.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -121,25 +120,57 @@ public class ServletEcrivantDesEnTetes extends HttpServlet {
 	}
 
 }
-		</code>
-	 </pre>
+			</code>
+		 </pre>      
+
+		<p>Voici le code de la JSP afficherAttributApplication.jsp :</p>
 		
-		<p>Voici le résultat :</p>
+		<pre class="prettyprint">
+		 	<code class="language-java">
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;title&gt;Affichage d'un attribut d'application&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;p&gt;
+		Voici la valeur de l'attribut d'application attributDApplication :
+		&lt;%=application.getAttribute("attributDApplication") %&gt;
+	&lt;/p&gt;
+	&lt;a href="demonstrations/demonstration4.html"&gt;Retour à la page d'accueil de la démonstration&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			</code>		
+		</pre>
 		
-		<img alt="" src="../images/Ecriture en-tetes.png">
-	
-	  <h2>L'écriture du corps de la réponse</h2>
+		<h2>Les paramètres d'application</h2>
 		
 		<p>
-		  	Le lien suivant pointe vers une servlet écrivant un corps esthétique :
-		  	<a href="../ServletEcrivantCorpsEsthetique">/modules/module2/ServletEcrivantCorpsEsthetique</a>
+		  	Le lien suivant pointe vers une servlet lisant un paramètre d'application configuré dans le fichier web.xml:
+		  	<a href="../ServletLisantUnParametreDApplication">/modules/module5/ServletLisantUnParametreDApplication</a>.
 		</p>
 		
-		<p>Voici le code de la servlet :</p>
-
-	 <pre class="prettyprint">
-	 	<code class="language-java">
-package fr.eni.javaee.module2;
+		<p>Voici la configuration nécessaire dans le fichier web.xml</p>
+		
+		<pre class="prettyprint">
+		 	<code class="language-xml">
+&lt;context-param&gt;
+  &lt;description&gt;Un paramètre d'application&lt;/description&gt;
+  &lt;param-name&gt;EMAIL_ADMINISTRATEUR&lt;/param-name&gt;
+  &lt;param-value&gt;administrateur@monapplication.fr&lt;/param-value&gt;
+&lt;/context-param&gt;
+			</code>
+		 </pre>
+	 
+	 		
+		<p>Voici le code de la servlet:</p>
+	
+		<pre class="prettyprint">
+		 	<code class="language-java">
+package fr.eni.javaee.module5;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -151,16 +182,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletEcrivantCorpsEsthetique
+ * Servlet implementation class ServletLisantUnParametreDApplication
  */
-@WebServlet("/modules/module2/ServletEcrivantCorpsEsthetique")
-public class ServletEcrivantCorpsEsthetique extends HttpServlet {
+@WebServlet("/modules/module5/ServletLisantUnParametreDApplication")
+public class ServletLisantUnParametreDApplication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletEcrivantCorpsEsthetique() {
+    public ServletLisantUnParametreDApplication() {
         super();
     }
 
@@ -168,38 +199,11 @@ public class ServletEcrivantCorpsEsthetique extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html");
-		
+		String emailAdministrateur = this.getServletContext().getInitParameter("EMAIL_ADMINISTRATEUR");
 		PrintWriter out = response.getWriter();
-		
-		try 
-		{
-			out.print("&lt;html&gt;");
-			out.print("&lt;head&gt;&lt;title&gt;Une belle réponse&lt;/title&gt;&lt;/head&gt;");
-			out.print("&lt;body&gt;");
-			out.print("&lt;h1&gt;une réponse esthétique&lt;/h1&gt;");
-			out.flush();
-			
-			Thread.sleep(1000);
-			
-			out.print("&lt;h2&gt;un sous-titre&lt;/h2&gt;");
-			out.flush();
-			
-			Thread.sleep(1000);
-			
-			out.print("&lt;p&gt;un paragraphe&lt;/p&gt;");
-			out.flush();
-			
-			Thread.sleep(1000);
-			
-			out.print("&lt;/body&gt;");
-			out.print("&lt;/html&gt;");
-			out.flush();
-			out.close();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		out.println("L'email de l'administrateur est : " +emailAdministrateur);
+		out.println("L'information est accessible depuis toutes les servlets et toutes les JSP");
+		out.println("Dans une JSP, il faut écrire : application.getInitParameter(\"EMAIL_ADMINISTRATEUR\")");
 	}
 
 	/**
@@ -210,10 +214,8 @@ public class ServletEcrivantCorpsEsthetique extends HttpServlet {
 	}
 
 }
-		</code>
-	 </pre>
-
-
+			</code>
+		 </pre>
     </div>
     <!-- /.container -->
 
