@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PremiereServletConfigarationWebXML
+ * Servlet implementation class PremiereServletConfigurationWebXML
  */
-public class PremiereServletConfigarationWebXML extends HttpServlet {
+public class PremiereServletConfigurationWebXML extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
