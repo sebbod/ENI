@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
-/*
+
 @WebServlet(
-		urlPatterns="/ServletRechercherNombre",
+		urlPatterns="/modules/module2/TP1/ServletRechercherNombre",
 		initParams= {
-						@WebInitParam(name="BORNE_MIN",value="10"),
-						@WebInitParam(name="BORNE_MAX",value="15")
+						@WebInitParam(name="BORNE_MIN",value="0"),
+						@WebInitParam(name="BORNE_MAX",value="10")
 					}
 		)
-*/
+
 public class ServletRechercherNombre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
