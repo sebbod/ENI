@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+   <!-- module 1 -->
   <servlet>
     <servlet-name>PremiereServletConfigurationWebXML</servlet-name>
     <servlet-class>fr.eni.javaee.module2.PremiereServletConfigurationWebXML</servlet-class>
@@ -33,7 +34,8 @@
   <servlet-mapping>
     <servlet-name>ServletAvecParametreInitialisationWebXML</servlet-name>
     <url-pattern>/modules/module2/ServletAvecParametreInitialisationWebXML</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>    
+  <!-- module 3 -->
   <servlet>
     <servlet-name>premiereJSPDansWEB_INF</servlet-name>
     <jsp-file>/WEB-INF/modules/module3/demonstrations/premiereJSPDansWEB-INF.jsp</jsp-file>
@@ -42,11 +44,13 @@
     <servlet-name>premiereJSPDansWEB_INF</servlet-name>
     <url-pattern>/modules/module3/demonstrations/secondePremiereJSP</url-pattern>
   </servlet-mapping>
+  
   <context-param>
     <description>Un paramètre d'application</description>
     <param-name>EMAIL_ADMINISTRATEUR</param-name>
     <param-value>administrateur@monapplication.fr</param-value>
   </context-param>
+   <!-- module 7 -->
   <error-page>
     <error-code>403</error-code>
     <location>/modules/module7/demonstrations/erreur403.html</location>
