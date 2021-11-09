@@ -23,7 +23,7 @@ public class ServletIllegalStateException extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("ServletIllegalStateException");
+		// response.getWriter().append("ServletIllegalStateException");
 		PrintWriter out = response.getWriter();
 		out.println("Début réponse");
 		out.flush();
