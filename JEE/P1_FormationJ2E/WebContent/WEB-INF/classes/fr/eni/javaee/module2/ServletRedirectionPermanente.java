@@ -20,7 +20,7 @@ public class ServletRedirectionPermanente extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
-		response.setHeader("Location", "http://google.fr");
+		response.setHeader("Location", "https://google.fr");
 	}
 
 	/**
