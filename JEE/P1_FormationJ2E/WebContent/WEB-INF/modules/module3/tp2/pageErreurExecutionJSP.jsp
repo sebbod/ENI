@@ -10,7 +10,7 @@
 <body>
 	<h1>Une exception non géré est survenue</h1>
 	<p>
-		<%=exception.getMessage() %>
+		(<%=exception %>)<%=exception.getMessage() %>
 	</p>
 </body>
 </html>
