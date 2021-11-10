@@ -15,22 +15,30 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/modules/module3/ServletDelegantResponseAUneJSP")
 public class ServletDelegantResponseAUneJSP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd=null;
-		//rd = request.getRequestDispatcher("/WEB-INF/modules/module3/demonstrations/premiereJSPDansWEB-INF.jsp");
-		//rd=this.getServletContext().getRequestDispatcher("/modules/module3/demonstrations/secondePremiereJSP");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher rd = null;
+		// méthode 1 - URL direct
+		// rd =
+		// request.getRequestDispatcher("/WEB-INF/modules/module3/demonstrations/premiereJSPDansWEB-INF.jsp");
+		// méthode 2 - @WebServlet
+		// rd=this.getServletContext().getRequestDispatcher("/modules/module3/demonstrations/secondePremiereJSP");
+		// méthode 3 - en passant par la config du web.inf
 		rd = this.getServletContext().getNamedDispatcher("premiereJSPDansWEB_INF");
 		rd.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
