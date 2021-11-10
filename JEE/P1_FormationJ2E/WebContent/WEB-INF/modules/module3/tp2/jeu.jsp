@@ -1,6 +1,8 @@
 <%@page import="fr.eni.javaee.module3.tp2.bo.ActionsPossibles"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    	isErrorPage="false"
+    	errorPage="pageErreurExecutionJSP.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,6 +39,10 @@
 		</ul>
 		<input type="submit" value="Valider">
 	</form>
+	<%
+	String maVariable=null;
+	maVariable.length();//NullPointerException
+	%>
 </body>
 </html>
 
