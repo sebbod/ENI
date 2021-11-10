@@ -7,10 +7,13 @@
 <title>Une JSP affichant l'information fournie par la servlet</title>
 </head>
 <body>
+	
+
+	<!-- Les scriptlets  -->
 	<%
 		String uneVariable = (String) request.getAttribute("uneCle");
 	%>
-	
+
 	L'information fournie par la servlet est :<%=uneVariable %>
 	
 	<a href="<%=request.getContextPath()%>/modules/module3/demonstrations/demonstration6.html">Retour</a>
