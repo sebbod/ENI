@@ -13,4 +13,18 @@
 		maxIdle="30"
 		maxWaitMillis="10000"
 	/>
+	<Resource
+		name="jdbc/module4_tp_pool_cnx"
+		
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		type="javax.sql.DataSource"
+		
+		url="jdbc:sqlserver://localhost;databasename=M4TP1_SUIVI_REPAS"
+		username="userSuiviRepas"
+		password="Pa$$w0rd"
+		
+		maxTotal="100"
+		maxIdle="30"
+		maxWaitMillis="10000"
+	/>
 </Context>

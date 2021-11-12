@@ -1,4 +1,4 @@
-package fr.eni.javaee.module4;
+package fr.eni.javaee.module4.tp1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class ServletTestPoolConnexion
  */
-@WebServlet("/modules/module4/tp1/ServletTestPoolConnexion")
+@WebServlet("/modules/module4/ServletTestPoolConnexion")
 public class ServletTestPoolConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,7 @@ public class ServletTestPoolConnexion extends HttpServlet {
 		try {
 			Context context = new InitialContext();
 			// Recherche de la DataSource
-			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/pool_cnx");
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/module4_tp_pool_cnx");
 			// Demande une connexion. La méthode getConnection met la demande en attente
 			// tant qu'il n'y a
 			// pas de connexions disponibles dans le pool.
