@@ -1,13 +1,13 @@
-<%@page import="fr.eni.javaee.suividesrepas.bo.Aliment"%>
-<%@page import="fr.eni.javaee.suividesrepas.bo.Repas"%>
-<%@page import="fr.eni.javaee.suividesrepas.messages.LecteurMessage"%>
+<%@page import="fr.eni.javaee.module4.tp1.bo.Aliment"%>
+<%@page import="fr.eni.javaee.module4.tp1.bo.Repas"%>
+<%@page import="fr.eni.javaee.module4.tp1.messages.LecteurMessage"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="<%=request.getContextPath() %>/css/style.css" rel="stylesheet">
+<link href="<%=request.getContextPath() %>/css/style_m4tp1.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Consultation</title>
 </head>
