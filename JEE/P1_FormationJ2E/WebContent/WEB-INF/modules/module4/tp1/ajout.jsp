@@ -45,7 +45,7 @@
 				<label for="repas">Repas : </label>
 				<textarea rows="5" cols="30" id="repas" name="repas" ><%=request.getParameter("repas")!=null?request.getParameter("repas"):""%></textarea>
 				<br>
-				Note : Séparer les plats par une virgule [,]
+				Note : Séparer les plats par une virgule [,].
 			</div>
 			
 			<div>
