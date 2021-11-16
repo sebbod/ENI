@@ -22,10 +22,10 @@
 		}
 		%>
 		
-		<form action="<%=request.getContextPath()%>/repas" method="post">
+		<form action="<%=request.getContextPath()%>/modules/module4/tp1/repas" method="post">
 			<input type="date" name="dateFiltre" value="<%=dateFiltre%>"/>
 			<input type="submit" value="Filtrer"/>
-			<a href="<%=request.getContextPath()%>/repas"><input type="button" value="Réinitialiser"/></a>
+			<a href="<%=request.getContextPath()%>/modules/module4/tp1/repas"><input type="button" value="Réinitialiser"/></a>
 		</form>
 	
 		<%
@@ -66,7 +66,7 @@
 									<td><%=repas.getDate()%></td>
 									<td><%=repas.getHeure()%></td>
 									
-									<td><a href="<%=request.getContextPath()%>/repas?detail=<%=repas.getIdentifiant()%>&<%=dateFiltre%>">détail</a></td>
+									<td><a href="<%=request.getContextPath()%>/modules/module4/tp1/repas?detail=<%=repas.getIdentifiant()%>&<%=dateFiltre%>">détail</a></td>
 								</tr>
 							<%
 								if(String.valueOf(repas.getIdentifiant()).equals(request.getParameter("detail")))
@@ -105,7 +105,7 @@
 			
 		</table>
 	
-		<a href="<%=request.getContextPath()%>/ajoutrepas"><input type="button" value="Ajouter un nouveau repas"/></a>
+		<a href="<%=request.getContextPath()%>/modules/module4/tp1/ajoutrepas"><input type="button" value="Ajouter un nouveau repas"/></a>
 		<a href="<%=request.getContextPath()%>"><input type="button" value="Retour à l'accueil"/></a>
 		
 	</div>

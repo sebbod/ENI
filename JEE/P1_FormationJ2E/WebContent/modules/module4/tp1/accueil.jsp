@@ -11,10 +11,10 @@
 	<h1>ACCUEIL</h1>
 	
 	<div class="contenu">
-		<a href="<%=request.getContextPath()%>/ajoutrepas"><input type="button" value="Ajouter un nouveau repas"/></a>
+		<a href="<%=request.getContextPath()%>/modules/module4/tp1/ajoutrepas"><input type="button" value="Ajouter un nouveau repas"/></a>
 	</div>
 	<div class="contenu">
-		<a href="<%=request.getContextPath()%>/repas"><input type="button" value="Visualiser les repas"/></a>
+		<a href="<%=request.getContextPath()%>/modules/module4/tp1/repas"><input type="button" value="Visualiser les repas"/></a>
 	</div>
 </body>
 </html>

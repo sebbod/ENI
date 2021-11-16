@@ -32,7 +32,7 @@
 			}
 		%>
 	
-		<form action="<%=request.getContextPath()%>/ajoutrepas" method="post">
+		<form action="<%=request.getContextPath()%>/modules/module4/tp1/ajoutrepas" method="post">
 			<div class="saisie">
 				<label for="date">Date : </label>
 				<input type="date" name="date" type="date" value="<%=request.getParameter("date")%>"/>
@@ -50,7 +50,7 @@
 			
 			<div>
 				<input type="submit" value="Valider"/>
-				<a href="<%=request.getContextPath()%>"><input type="button" value="Annuler"/></a>
+				<a href="<%=request.getContextPath()%>/modules/module4/tp1/repas"><input type="button" value="Annuler"/></a>
 			</div>
 		</form>
 	

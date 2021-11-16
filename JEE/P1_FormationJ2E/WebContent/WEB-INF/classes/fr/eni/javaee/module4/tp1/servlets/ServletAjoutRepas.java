@@ -22,7 +22,7 @@ import fr.eni.javaee.module4.tp1.bll.RepasManager;
 /**
  * Servlet implementation class ServletAjoutRepas
  */
-@WebServlet("/ajoutrepas")
+@WebServlet("/modules/module4/tp1/ajoutrepas")
 public class ServletAjoutRepas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -90,7 +90,7 @@ public class ServletAjoutRepas extends HttpServlet {
 			try {
 				repasManager.ajouterRepas(date, heure, Arrays.asList(repas.split(",")));
 				// Si tout se passe bien, je vais vers la page de consultation:
-				RequestDispatcher rd = request.getRequestDispatcher("/repas");
+				RequestDispatcher rd = request.getRequestDispatcher("/modules/module4/tp1/repas");
 				rd.forward(request, response);
 			} catch (BusinessException e) {
 				// Sinon je retourne à la page d'ajout pour indiquer les problèmes:

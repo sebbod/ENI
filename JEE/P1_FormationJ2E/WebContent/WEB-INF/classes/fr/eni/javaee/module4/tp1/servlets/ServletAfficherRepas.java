@@ -21,7 +21,7 @@ import fr.eni.javaee.module4.tp1.bo.Repas;
 /**
  * Servlet implementation class ServletAfficherRepas
  */
-@WebServlet("/repas")
+@WebServlet("/modules/module4/tp1/repas")
 public class ServletAfficherRepas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

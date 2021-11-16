@@ -50,6 +50,13 @@
     <param-name>EMAIL_ADMINISTRATEUR</param-name>
     <param-value>administrateur@gmail.fr</param-value>
   </context-param>
+  <!-- module 5 TP1 -->
+  <context-param>
+	<description>Liste des couleurs disponibles</description>
+	<param-name>COULEURS</param-name>
+	<param-value>rouge,bleu,vert,noir</param-value>
+  </context-param>
+  
    <!-- module 7 -->
   <error-page>
     <error-code>403</error-code>
