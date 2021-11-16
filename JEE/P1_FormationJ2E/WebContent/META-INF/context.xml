@@ -3,19 +3,16 @@
 	<Resource
 		name="jdbc/pool_cnx"
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		type="javax.sql.DataSource"
-	
+		type="javax.sql.DataSource"	
 		url="jdbc:sqlserver://localhost;databasename=FORMATIONJ2E"
 		username="utilisateurBDD"
-		password="Pa$$w0rd"
-		
+		password="Pa$$w0rd"		
 		maxTotal="100"
 		maxIdle="30"
 		maxWaitMillis="10000"
 	/>
 	<Resource
-		name="jdbc/module4_tp_pool_cnx"
-		
+		name="jdbc/module4_tp_pool_cnx"		
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		type="javax.sql.DataSource"
 		
@@ -27,4 +24,16 @@
 		maxIdle="30"
 		maxWaitMillis="10000"
 	/>
+	<Resource 
+		name="jdbc/module6_tp_pool_cnx"		
+		maxWaitMillis="10000" 
+		maxIdle="30" 
+		maxTotal="100" 
+		password="Pa$$w0rd" 
+		username="userListesCourse" 
+		url="jdbc:sqlserver://localhost;databasename=M6TP1D_LISTES_COURSE" 
+		type="javax.sql.DataSource" 
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+	/>
+
 </Context>
