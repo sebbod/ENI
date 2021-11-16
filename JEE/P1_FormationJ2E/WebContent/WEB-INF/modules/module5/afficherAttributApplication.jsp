@@ -9,7 +9,7 @@
 <body>
 	<p>
 		Voici la valeur de l'attribut d'application attributDApplication :
-		<%=application.getAttribute("attributDApplication") %>
+		"<%=application.getAttribute("attributDApplication") %>"
 	</p>
 	<a href="demonstrations/demonstration4.html">Retour à la page d'accueil de la démonstration</a>
 </body>

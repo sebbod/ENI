@@ -19,55 +19,56 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/modules/module5/ServletManipulationCookie")
 public class ServletManipulationCookie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletManipulationCookie() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ServletManipulationCookie() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		Cookie[] cookies = request.getCookies();
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		
-		if(cookies==null)
-		{
+
+		if (cookies == null) {
 			out.println("Il n'y a pas de cookie.");
 			out.println("C'est peut-être le premier passage de l'utilisateur.");
 			out.println("Ou le fait qu'il n'accepte pas les cookies.");
 			out.println("Date : " + sdf.format(new Date()));
-			
+
 			out.println();
 			out.println("Voici les cookies nouvellement créés :");
-			
-			for(int i=0;i<3;i++)
-			{
+
+			for (int i = 0; i < 3; i++) {
 				Random rd = new Random();
-				Cookie unCookie = new Cookie("unNom_"+rd.nextInt(1000), "uneValeur_"+rd.nextInt(1000));
+				Cookie unCookie = new Cookie("unNom_" + i + "_" + rd.nextInt(1000),
+						"uneValeur_" + i + "_" + rd.nextInt(1000));
 				unCookie.setMaxAge(rd.nextInt(10));
 				response.addCookie(unCookie);
-				out.println(unCookie.getName()+"="+unCookie.getValue()+", durée="+unCookie.getMaxAge()+" secondes.");
+				out.println(unCookie.getName() + "=" + unCookie.getValue() + ", durée=" + unCookie.getMaxAge()
+						+ " secondes.");
 			}
-		}
-		else
-		{
+		} else {
 			out.println("Voici les cookies qui transitent entre le navigateur du client et le serveur :");
-			for(Cookie unCookie:cookies)
-			{
-				out.println(unCookie.getName()+"="+unCookie.getValue());
+			for (Cookie unCookie : cookies) {
+				out.println(unCookie.getName() + "=" + unCookie.getValue());
 			}
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
