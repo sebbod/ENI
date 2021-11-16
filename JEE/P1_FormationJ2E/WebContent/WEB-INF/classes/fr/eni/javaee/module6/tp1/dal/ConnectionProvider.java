@@ -18,7 +18,7 @@ abstract class ConnectionProvider {
 		Context context;
 		try {
 			context = new InitialContext();
-			ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/pool_cnx");
+			ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/module6_tp_pool_cnx");
 		} catch (NamingException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Impossible d'accéder à la base de données");

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="fr.eni.javaee.gestionlistescourses.messages.LecteurMessage" %>
+<%@ page import="fr.eni.javaee.module6.tp1.messages.LecteurMessage" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/modules/module6/tp1/fragments/head.jsp"></jsp:include>
 
 <body class="container">
 
@@ -31,9 +31,9 @@
 			        	<c:forEach var="c" items="${listesCourse}">
 				            <li class="list-group-item d-flex justify-content-between align-items-center">${c.nom}
 				                <div>
-				                	<a href="${pageContext.request.contextPath}/nouvelle?id=${c.id}" class="badge" title="Editer la liste"><i class="material-icons">create</i></a>
-				                    <a href="${pageContext.request.contextPath}/panier?id=${c.id}" class="badge" title="Commencer ses courses"><i class="material-icons">shopping_cart</i></a>
-				                    <a href="${pageContext.request.contextPath}/listes?supprimer=${c.id}" class="badge text-danger" title="Supprimer"><i class="material-icons">delete</i></a>
+				                	<a href="${pageContext.request.contextPath}/modules/module6/tp1/nouvelle?id=${c.id}" class="badge" title="Editer la liste"><i class="material-icons">create</i></a>
+				                    <a href="${pageContext.request.contextPath}/modules/module6/tp1/panier?id=${c.id}" class="badge" title="Commencer ses courses"><i class="material-icons">shopping_cart</i></a>
+				                    <a href="${pageContext.request.contextPath}/modules/module6/tp1/listes?supprimer=${c.id}" class="badge text-danger" title="Supprimer"><i class="material-icons">delete</i></a>
 				                </div>
 				
 				            </li>
@@ -49,7 +49,7 @@
     <!-- Footer -->
     <footer class="row bg-dark footer-demodule fixed-bottom py-1">
             <div class="col-lg-4 offset-lg-4 text-center">
-                <a class="btn" href="${pageContext.request.contextPath}/nouvelle" title="Créer une nouvelle liste"><i class="material-icons">add</i></a>
+                <a class="btn" href="${pageContext.request.contextPath}/modules/module6/tp1/nouvelle" title="Créer une nouvelle liste"><i class="material-icons">add</i></a>
             </div>
         <!-- /.container -->
     </footer>

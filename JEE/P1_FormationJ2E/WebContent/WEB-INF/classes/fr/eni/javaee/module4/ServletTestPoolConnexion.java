@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class ServletTestPoolConnexion
  */
-@WebServlet("/modules/module4/tp1/ServletTestPoolConnexion")
+@WebServlet("/modules/module4/ServletTestPoolConnexion")
 public class ServletTestPoolConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -38,7 +38,7 @@ public class ServletTestPoolConnexion extends HttpServlet {
 			// tant qu'il n'y a
 			// pas de connexions disponibles dans le pool.
 			Connection cnx = dataSource.getConnection();
-			out.print("La connexion est " + (cnx.isClosed() ? "fermée" : "ouverte") + ".");
+			out.print("La connexion à pool_cnx est " + (cnx.isClosed() ? "fermée" : "ouverte") + ".");
 			// Libérer la connexion lorsque l'on en a plus besoin:
 			cnx.close();// La connexion n'est pas fermée mais remise dans le pool.
 

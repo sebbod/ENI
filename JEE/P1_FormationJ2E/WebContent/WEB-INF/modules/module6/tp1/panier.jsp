@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="fr.eni.javaee.gestionlistescourses.messages.LecteurMessage" %>
+<%@ page import="fr.eni.javaee.module6.tp1.messages.LecteurMessage" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/modules/module6/tp1/fragments/head.jsp"></jsp:include>
 
 <body class="container">
 	
@@ -34,7 +34,7 @@
 			        	<c:forEach var="a" items="${listeCourse.articles}">
 				            <li class="list-group-item d-flex justify-content-between align-items-center">
 								<div>
-									<form action="${pageContext.request.contextPath}/panier" id="form${a.id}" method="post">
+									<form action="${pageContext.request.contextPath}/modules/module6/tp1/panier" id="form${a.id}" method="post">
 										<label class="custom-control custom-checkbox">
 											<input type="hidden" name="id" value="${listeCourse.id}"/>
 											<input type="hidden" name="id_article" value="${a.id}"/>
@@ -62,11 +62,11 @@
 	<!-- Footer -->
     <footer class="row bg-dark footer-demodule fixed-bottom py-1">
 		      <div class="text-center col-2 offset-3">
-		        <a class="btn" href="${pageContext.request.contextPath}/listes" title="Retour Ã  la liste des courses"><i class="material-icons">arrow_back</i></a>
+		        <a class="btn" href="${pageContext.request.contextPath}/modules/module6/tp1/listes" title="Retour à la liste des courses"><i class="material-icons">arrow_back</i></a>
 		      </div>
 		      <!-- /.container -->
 		<div class="text-center col-2 offset-2">
-			<a class="btn" href="${pageContext.request.contextPath}/panier?id=${listeCourse.id}&clear" title="clear"><i class="material-icons">clear</i></a>
+			<a class="btn" href="${pageContext.request.contextPath}/modules/module6/tp1/panier?id=${listeCourse.id}&clear" title="clear"><i class="material-icons">clear</i></a>
 		</div>
     </footer>
 

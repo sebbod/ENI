@@ -31,7 +31,7 @@
 		maxTotal="100" 
 		password="Pa$$w0rd" 
 		username="userListesCourse" 
-		url="jdbc:sqlserver://localhost;databasename=M6TP1D_LISTES_COURSE" 
+		url="jdbc:sqlserver://localhost;databasename=M5TP1_LISTES_COURSE" 
 		type="javax.sql.DataSource" 
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
 	/>

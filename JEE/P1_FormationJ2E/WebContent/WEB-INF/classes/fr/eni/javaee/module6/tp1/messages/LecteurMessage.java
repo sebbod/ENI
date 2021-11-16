@@ -13,7 +13,7 @@ public class LecteurMessage {
 
 	static {
 		try {
-			rb = ResourceBundle.getBundle("fr.eni.javaee.gestionlistescourses.messages.messages_erreur");
+			rb = ResourceBundle.getBundle("fr.eni.javaee.module6.tp1.messages.messages_erreur");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
