@@ -90,6 +90,14 @@
   	<url-pattern>/modules/module8/formatageNombres</url-pattern>
   </servlet-mapping>
   
+<error-page>
+  <error-code>500</error-code>
+  <location>/modules/module8/tp1/erreur500.jsp</location>
+ </error-page>
+ <error-page>
+  <error-code>404</error-code>
+  <location>/modules/module8/tp1/erreur404.jsp</location>
+ </error-page>
 </web-app>
 
 
