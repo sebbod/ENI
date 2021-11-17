@@ -14,12 +14,10 @@
 	<Resource
 		name="jdbc/module4_tp_pool_cnx"		
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		type="javax.sql.DataSource"
-		
+		type="javax.sql.DataSource"		
 		url="jdbc:sqlserver://localhost;databasename=M4TP1_SUIVI_REPAS"
 		username="userSuiviRepas"
-		password="Pa$$w0rd"
-		
+		password="Pa$$w0rd"		
 		maxTotal="100"
 		maxIdle="30"
 		maxWaitMillis="10000"
@@ -35,5 +33,15 @@
 		type="javax.sql.DataSource" 
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
 	/>
+	<Resource 
+		maxWaitMillis="10000" 
+		maxIdle="30" 
+		maxTotal="100" 
+		password="Pa$$w0rd" 
+		username="userNotes" 
+		url="jdbc:sqlserver://localhost;databasename=M9TP1_NOTES" 
+		type="javax.sql.DataSource" 
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+		name="jdbc/module9_tp_pool_cnx"/>
 
 </Context>
