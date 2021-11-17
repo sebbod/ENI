@@ -17,85 +17,68 @@ import fr.eni.javaee.module9.bo.Crayon;
 @Path("/crayons")
 public class GestionCrayons {
 
-	//Attention aux accès concurrents
+	// Attention aux accès concurrents
 	private static List<Crayon> listeCrayons = new ArrayList<>();
-	
-	static
-	{
+
+	static {
 		listeCrayons.add(new Crayon(1, "bille", "bleu"));
-		listeCrayons.add(new Crayon(2, "plume", "vert"));
+		listeCrayons.add(new Crayon(2, "bille", "vert"));
+		listeCrayons.add(new Crayon(3, "plume", "bleu"));
+		listeCrayons.add(new Crayon(4, "plume", "vert"));
 	}
-	
+
 	@GET
-	public List<Crayon> getCrayons()
-	{
+	public List<Crayon> getCrayons() {
 		return listeCrayons;
 	}
-	
+
 	@GET
 	@Path("/{id : \\d+}")
-	public Crayon getCrayon(@PathParam("id") int id)
-	{
-		Crayon crayonARetourner=null;
-		for(Crayon crayon:listeCrayons)
-		{
-			if(crayon.getId()==id)
-			{
-				crayonARetourner=crayon;
+	public Crayon getCrayon(@PathParam("id") int id) {
+		Crayon crayonARetourner = null;
+		for (Crayon crayon : listeCrayons) {
+			if (crayon.getId() == id) {
+				crayonARetourner = crayon;
 				break;
 			}
 		}
 		return crayonARetourner;
 	}
-	
+
 	@POST
-	public Crayon ajouterCrayon(@FormParam("type") String type,@FormParam("couleur") String couleur)
-	{
-		Crayon crayon = new Crayon(type,couleur);
+	public Crayon ajouterCrayon(@FormParam("type") String type, @FormParam("couleur") String couleur) {
+		Crayon crayon = new Crayon(type, couleur);
 		crayon.setId(new Random().nextInt(100));
 		listeCrayons.add(crayon);
 		return crayon;
 	}
-	
+
 	@PUT
 	@Path("/{id : \\d+}")
-	public Crayon modifierCrayon(@PathParam("id") int id,@FormParam("type") String type,@FormParam("couleur") String couleur)
-	{
+	public Crayon modifierCrayon(@PathParam("id") int id, @FormParam("type") String type,
+			@FormParam("couleur") String couleur) {
 		Crayon crayonAModifier = null;
-		for(Crayon crayon : listeCrayons)
-		{
-			if(crayon.getId()==id)
-			{
+		for (Crayon crayon : listeCrayons) {
+			if (crayon.getId() == id) {
 				crayon.setCouleur(couleur);
 				crayon.setType(type);
-				crayonAModifier=crayon;
+				crayonAModifier = crayon;
 				break;
 			}
 		}
 		return crayonAModifier;
 	}
-	
+
 	@DELETE
 	@Path("/{id : \\d+}")
-	public boolean supprimerCrayon(@PathParam("id") int id)
-	{
+	public boolean supprimerCrayon(@PathParam("id") int id) {
 		Crayon crayonASupprimer = null;
-		for(Crayon crayon : listeCrayons)
-		{
-			if(crayon.getId()==id)
-			{
-				crayonASupprimer=crayon;
+		for (Crayon crayon : listeCrayons) {
+			if (crayon.getId() == id) {
+				crayonASupprimer = crayon;
 				break;
 			}
 		}
 		return listeCrayons.remove(crayonASupprimer);
 	}
 }
-
-
-
-
-
-
-
-

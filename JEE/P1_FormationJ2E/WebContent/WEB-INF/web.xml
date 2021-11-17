@@ -44,12 +44,14 @@
     <servlet-name>premiereJSPDansWEB_INF</servlet-name>
     <url-pattern>/modules/module3/demonstrations/secondePremiereJSP</url-pattern>
   </servlet-mapping>
+  
   <!-- module 5 -->
   <context-param>
     <description>Un paramètre d'application</description>
     <param-name>EMAIL_ADMINISTRATEUR</param-name>
     <param-value>administrateur@gmail.fr</param-value>
   </context-param>
+  
   <!-- module 5 TP1 -->
   <context-param>
 	<description>Liste des couleurs disponibles</description>
@@ -62,6 +64,7 @@
     <error-code>403</error-code>
     <location>/modules/module7/demonstrations/erreur403.html</location>
   </error-page>
+  
   <!-- module 8 -->
   <servlet>
   	<servlet-name>JSPInternationalisationMessages</servlet-name>
@@ -89,8 +92,9 @@
   	<servlet-name>JSPformatageNombres</servlet-name>
   	<url-pattern>/modules/module8/formatageNombres</url-pattern>
   </servlet-mapping>
-  
-<error-page>
+ 
+ <!-- module 8 TP 1 -->
+ <error-page>
   <error-code>500</error-code>
   <location>/modules/module8/tp1/erreur500.jsp</location>
  </error-page>
@@ -98,6 +102,7 @@
   <error-code>404</error-code>
   <location>/modules/module8/tp1/erreur404.jsp</location>
  </error-page>
+ 
 </web-app>
 
 

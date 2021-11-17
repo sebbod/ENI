@@ -79,7 +79,7 @@
 
 		datasFormulaire = "type="+encodeURIComponent("valeurType")+"&couleur="+encodeURIComponent("valeurCouleur");
 	    
-	    xhr.open("POST", "/AppliDemo/modules/module9/rest/crayons/", true);
+	    xhr.open("POST", "/P1_FormationJ2E/modules/module9/rest/crayons/", true);
 	    xhr.setRequestHeader("Accept","application/json");
 	    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	    xhr.send(datasFormulaire);
@@ -91,7 +91,7 @@
 
 		datasFormulaire = "type="+encodeURIComponent("nouveauType")+"&couleur="+encodeURIComponent("nouvelleCouleur");
 	    
-	    xhr.open("PUT", "/AppliDemo/modules/module9/rest/crayons/2", true);
+	    xhr.open("PUT", "/P1_FormationJ2E/modules/module9/rest/crayons/2", true);
 	    xhr.setRequestHeader("Accept","application/json");
 	    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	    xhr.send(datasFormulaire);
@@ -101,7 +101,7 @@
 	{
 	    var xhr = createXHR();   
 
-	    xhr.open("DELETE", "/AppliDemo/modules/module9/rest/crayons/2", true);
+	    xhr.open("DELETE", "/P1_FormationJ2E/modules/module9/rest/crayons/2", true);
 	    xhr.setRequestHeader("Accept","application/json");
 	    xhr.send(null);
 	}
@@ -110,7 +110,7 @@
 	{
 	    var xhr = createXHR();   
 
-	    xhr.open("GET", "/AppliDemo/modules/module9/rest/crayons", true);
+	    xhr.open("GET", "/P1_FormationJ2E/modules/module9/rest/crayons", true);
 	    xhr.setRequestHeader("Accept","application/json");
 	    xhr.send(null);
 	}
