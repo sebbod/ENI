@@ -38,7 +38,7 @@ public class ServletTestPoolConnexion extends HttpServlet {
 			// tant qu'il n'y a
 			// pas de connexions disponibles dans le pool.
 			Connection cnx = dataSource.getConnection();
-			out.print("La connexion à module6_tp_pool_cnx est " + (cnx.isClosed() ? "fermée" : "ouverte") + ".");
+			out.print("La connexion à module9_tp_pool_cnx est " + (cnx.isClosed() ? "fermée" : "ouverte") + ".");
 			// Libérer la connexion lorsque l'on en a plus besoin:
 			cnx.close();// La connexion n'est pas fermée mais remise dans le pool.
 
