@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>Voici les nouvelles conditions d'utilisation</h1>
-	<p>Bla bla bla</p>
-	
+	<p>ceci n'est pas du Bla bla bla</p>
+	<p>Faites le bon choix pour continuer ;-)</p>
 	<a href="${urlCible}?accepte">Valider</a>
 	<a href="${urlCible}">Refuser</a>
 </body>

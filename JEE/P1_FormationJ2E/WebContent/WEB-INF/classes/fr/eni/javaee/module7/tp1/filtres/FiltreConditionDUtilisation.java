@@ -53,7 +53,7 @@ public class FiltreConditionDUtilisation implements Filter {
 					.getRequestDispatcher("/WEB-INF/modules/module7/tp1/conditionDUtilisation.jsp");
 			rd.forward(httpRequest, httpResponse);
 		}
-		chain.doFilter(request, response);
+		// chain.doFilter(request, response);
 	}
 
 	/**
