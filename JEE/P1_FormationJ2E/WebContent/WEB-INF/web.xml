@@ -62,7 +62,7 @@
     <error-code>403</error-code>
     <location>/modules/module7/demonstrations/erreur403.html</location>
   </error-page>
-  
+  <!-- module 8 -->
   <servlet>
   	<servlet-name>JSPInternationalisationMessages</servlet-name>
   	<jsp-file>/WEB-INF/modules/module8/internationalisationMessages.jsp</jsp-file>
