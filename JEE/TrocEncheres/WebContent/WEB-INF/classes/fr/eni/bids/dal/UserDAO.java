@@ -12,10 +12,7 @@ public interface UserDAO extends DAO<User> {
 	 * @see fr.eni.bids.dal.DAO#getById(java.lang.Integer)
 	 */
 	@Override
-	default User getById(Integer id) throws DALException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public User getById(Integer id) throws DALException;
 
 	/*
 	 * (non-Javadoc)
@@ -23,10 +20,7 @@ public interface UserDAO extends DAO<User> {
 	 * @see fr.eni.bids.dal.DAO#getAll()
 	 */
 	@Override
-	default List<User> getAll() throws DALException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<User> getAll() throws DALException;
 
 	/*
 	 * (non-Javadoc)
@@ -34,10 +28,7 @@ public interface UserDAO extends DAO<User> {
 	 * @see fr.eni.bids.dal.DAO#insert(java.lang.Object)
 	 */
 	@Override
-	default void insert(User data) throws DALException {
-		// TODO Auto-generated method stub
-
-	}
+	public void insert(User data) throws DALException;
 
 	/*
 	 * (non-Javadoc)
@@ -45,10 +36,7 @@ public interface UserDAO extends DAO<User> {
 	 * @see fr.eni.bids.dal.DAO#update(java.lang.Object)
 	 */
 	@Override
-	default void update(User data) throws DALException {
-		// TODO Auto-generated method stub
-
-	}
+	public void update(User data) throws DALException;
 
 	/*
 	 * (non-Javadoc)
@@ -56,9 +44,6 @@ public interface UserDAO extends DAO<User> {
 	 * @see fr.eni.bids.dal.DAO#delete(java.lang.Object)
 	 */
 	@Override
-	default void delete(User obj) throws DALException {
-		// TODO Auto-generated method stub
-
-	}
+	public void delete(User obj) throws DALException;
 
 }
