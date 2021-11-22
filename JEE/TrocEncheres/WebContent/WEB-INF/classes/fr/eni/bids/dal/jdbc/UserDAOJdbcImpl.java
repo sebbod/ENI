@@ -6,11 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import fr.eni.bids.BusinessException;
 import fr.eni.bids.bo.User;
 import fr.eni.bids.dal.ConnectionProvider;
 import fr.eni.bids.dal.DALException;
-import fr.eni.bids.dal.ErrorDAL;
 import fr.eni.bids.dal.UserDAO;
 
 public class UserDAOJdbcImpl implements UserDAO {
@@ -22,9 +20,7 @@ public class UserDAOJdbcImpl implements UserDAO {
 	 */
 	@Override
 	public User getById(Integer id) throws DALException {
-		// TODO Auto-generated method stub
-		return UserDAO.super.getById(id);
-		User user = null;
+		User user = new User();
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		try (Connection cnx = ConnectionProvider.getConnection()) {
@@ -32,13 +28,22 @@ public class UserDAOJdbcImpl implements UserDAO {
 			prepStmt.setInt(1, id);
 			rs = prepStmt.executeQuery();
 			if (rs.next()) {
-				user = DalUtils.buildUser(rs);
+				user.setId(rs.getInt("id"));
+				user.setPseudo(rs.getString("pseudo"));
+				user.setPwd(rs.getString("pwd"));
+				user.setName(rs.getString("name"));
+				user.setFirstName(rs.getString("firstName"));
+				user.setEmail(rs.getString("email"));
+				user.setTelephone(rs.getString("telephone"));
+				user.setStreet(rs.getString("street"));
+				user.setTown(rs.getString("town"));
+				user.setZipCode(rs.getString("zipCode"));
+				user.setCredit(rs.getInt("credit"));
+				user.setIsAdmin(rs.getBoolean("isAdmin"));
 			}
 		} catch (SQLException e) {
-			BusinessException businessException = new fr.eni.bids.BusinessException();
-			businessException.ajouterErreur(ErrorDAL.READ_ERROR);
 			e.printStackTrace();
-			throw businessException;
+			throw new DALException(e.getMessage());
 		} finally {
 			if (prepStmt != null) {
 				try {

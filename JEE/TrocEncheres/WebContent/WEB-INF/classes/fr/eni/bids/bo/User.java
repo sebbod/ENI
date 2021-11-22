@@ -1,8 +1,6 @@
 package fr.eni.bids.bo;
 
 public class User {
-	private static final long serialVersionUID = -4813349171372997272L;
-
 	private Integer id;
 	private String pseudo;
 	private String name;
@@ -15,6 +13,9 @@ public class User {
 	private String pwd;
 	private int credit;
 	private Boolean isAdmin;
+
+	public User() {
+	}
 
 	/**
 	 * @param id
